@@ -6,7 +6,7 @@
     <meta name="description" content="Professional Cybersecurity Solutions - Protecting Your Digital Assets">
     <title>Professor Software Solutions - Cybersecurity</title>
     <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/3/34/Icon_hacker.png">
-	  <script src="js.js"></script>
+    <script src="js.js"></script>
     <style>
         /* Base Styles */
         body {
@@ -75,6 +75,9 @@
             border-radius: 10px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .service-item:hover {
@@ -92,6 +95,13 @@
             font-size: 1.1rem;
             color: #ccc;
             margin-bottom: 20px;
+        }
+
+        .service-item .service-icon {
+            margin-top: auto;
+            text-align: center;
+            font-size: 3rem;
+            color: #00aaff;
         }
 
         /* Footer */
@@ -168,16 +178,19 @@
     <div class="container">
         <div id="services" class="services">
             <div class="service-item">
-                <h3>Cybersecurity Consulting</h3>
-                <p>Our experts will assess your current security posture and provide strategic recommendations to mitigate risks and strengthen your defenses.</p>
+                <h3>Cyber Security</h3>
+                <p>Our experts assess your current security posture and provide strategic recommendations to mitigate risks and strengthen your defenses.</p>
+                <div class="service-icon">🔒</div>
             </div>
             <div class="service-item">
                 <h3>Penetration Testing</h3>
                 <p>We simulate real-world attacks on your systems to identify vulnerabilities and ensure your defenses are robust against potential intrusions.</p>
+                <div class="service-icon">💻</div>
             </div>
             <div class="service-item">
                 <h3>Data Protection</h3>
                 <p>We implement comprehensive encryption and data loss prevention strategies to secure your sensitive information and comply with regulatory standards.</p>
+                <div class="service-icon">🔑</div>
             </div>
         </div>
     </div>
