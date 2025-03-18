@@ -40,12 +40,13 @@
     </style>
 </head>
 <body>
-    <!--The login page has no login functionality. This is only a Fake Login page as per PoC-->
+    <!-- POC Message: This is a Proof of Concept (PoC) for a bug bounty program. No real login functionality exists. -->
     <div class="login-container">
         <div class="login-form">
             <img src="https://www.timberland.com/img/logos/timberland/full.svg" alt="Timberland Logo" class="logo">
             <h2>Sign In To GET HACKED</h2><br>
-            <form action="login" method="POST">
+            <!-- POC Message: This form does not process any data. It is for demonstration purposes only. -->
+            <form action="javascript:void(0);" method="POST">
                 <div class="input-group">
                     <label for="username">Username or Email</label>
                     <input type="text" id="username" name="username" required aria-label="Username or Email">
@@ -57,6 +58,7 @@
                     <span class="password-toggle" onclick="togglePassword()">👁️</span>
                     <span class="error-message" id="password-error"></span>
                 </div>
+                <!-- POC Message: This button does not submit any data. It is part of the PoC. -->
                 <button type="submit">Login</button>
             </form>
             <div class="links">
@@ -65,6 +67,7 @@
             </div>
             <div class="social-login">
                 <p>Or sign in with:</p>
+                <!-- POC Message: Social login buttons are non-functional. -->
                 <button type="button" class="social-btn google">
                     <img src="https://w7.pngwing.com/pngs/937/156/png-transparent-google-logo-google-search-google-account-redes-search-engine-optimization-text-service-thumbnail.png" alt="Google Logo">
                     Google
@@ -76,10 +79,11 @@
             </div>
         </div>
     </div>
-<footer>
-<h1 style="color:black">Subdomain Takeover by HackerOne Hunter: <a href="https://hackerone.com/hanmabaki">https://hackerone.com/hanmabaki</a></h1><br><br>
-</footer>
+    <footer>
+        <h1 style="color:black">Subdomain Takeover by HackerOne Hunter: <a href="https://hackerone.com/hanmabaki">https://hackerone.com/hanmabaki</a></h1><br><br>
+    </footer>
     <script>
+        // POC Message: This script is part of the PoC and does not process any real data.
         function togglePassword() {
             const passwordInput = document.getElementById('password');
             if (passwordInput.type === 'password') {
@@ -90,6 +94,7 @@
         }
 
         document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent form submission
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
             const usernameError = document.getElementById('username-error');
@@ -97,7 +102,6 @@
             const button = document.querySelector('button');
 
             if (!username) {
-                e.preventDefault();
                 usernameError.textContent = "Username or Email is required.";
                 usernameError.style.display = 'block';
             } else {
@@ -105,7 +109,6 @@
             }
 
             if (!password) {
-                e.preventDefault();
                 passwordError.textContent = "Password is required.";
                 passwordError.style.display = 'block';
             } else {
@@ -114,6 +117,11 @@
 
             if (username && password) {
                 button.classList.add('loading');
+                // POC Message: Simulating a fake loading state. No data is processed.
+                setTimeout(() => {
+                    alert('This is a PoC. No login functionality exists.');
+                    button.classList.remove('loading');
+                }, 2000);
             }
         });
     </script>
